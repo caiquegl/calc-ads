@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install)",
+      "Bash(pnpm check)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(pnpm --filter:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(pnpm arte)",
+      "Bash(npx expo install:*)",
+      "Bash(npx expo-doctor:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [
+      "Read(./**/.env)",
+      "Read(./**/*.keystore)",
+      "Read(./**/*.jks)",
+      "Bash(git push --force:*)",
+      "Bash(eas submit:*)"
+    ]
+  },
+  "includeCoAuthoredBy": false
+}

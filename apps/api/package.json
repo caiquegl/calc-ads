@@ -1,0 +1,31 @@
+{
+  "name": "@acerto/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=.env --env-file-if-exists=../../.env.local src/server.ts",
+    "start": "tsx --env-file-if-exists=.env --env-file-if-exists=../../.env.local src/server.ts",
+    "test": "tsx --test src/**/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "tsx --env-file-if-exists=.env --env-file-if-exists=../../.env.local src/db/seed.ts"
+  },
+  "dependencies": {
+    "@acerto/core": "workspace:*",
+    "@hono/node-server": "^1.13.0",
+    "@hono/zod-validator": "^0.4.0",
+    "@neondatabase/serverless": "^1.0.0",
+    "drizzle-orm": "^0.44.0",
+    "hono": "^4.6.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "drizzle-kit": "^0.31.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
