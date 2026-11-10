@@ -9,6 +9,8 @@
     "dev": "turbo run dev",
     "dev:api": "pnpm --filter @acerto/api dev",
     "dev:mobile": "pnpm --filter @acerto/mobile dev",
+    "dev:web": "pnpm --filter @acerto/web dev",
+    "build:web": "pnpm --filter @acerto/web build",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
     "check": "turbo run typecheck test",

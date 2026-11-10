@@ -1,0 +1,385 @@
+/* Tokens da marca Acerto — espelham apps/mobile/src/theme.ts (ver skill arte-marca). */
+:root {
+  --verde: #1f6f5c;
+  --verde-escuro: #14493d;
+  --verde-claro: #dcede7;
+  --moeda: #f2b33d;
+  --creme: #faf6ee;
+  --tinta: #1b2420;
+  --cinza: #6b7570;
+  --borda: #e4ded2;
+  --branco: #ffffff;
+  --erro: #b3412e;
+  --desconto: #b3412e;
+  --provento: #1f6f5c;
+
+  --xs: 4px;
+  --sm: 8px;
+  --md: 16px;
+  --lg: 24px;
+  --xl: 32px;
+  --raio-sm: 8px;
+  --raio-md: 14px;
+  --raio-lg: 22px;
+
+  color-scheme: light;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--tinta);
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--verde-escuro);
+}
+
+:focus-visible {
+  outline: 3px solid var(--moeda);
+  outline-offset: 2px;
+}
+
+/* Estrutura */
+.topo {
+  border-bottom: 1px solid var(--borda);
+  background: var(--creme);
+}
+.topo-conteudo,
+.principal,
+.rodape-conteudo {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--md);
+}
+.topo-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--md);
+  min-height: 60px;
+}
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--verde-escuro);
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+.marca img {
+  border-radius: 9px;
+}
+.topo nav a {
+  color: var(--cinza);
+  font-size: 14px;
+  text-decoration: none;
+}
+.topo nav a:hover {
+  color: var(--verde-escuro);
+}
+
+.principal {
+  flex: 1;
+  padding-top: var(--lg);
+  padding-bottom: var(--xl);
+}
+
+.rodape {
+  border-top: 1px solid var(--borda);
+  margin-top: var(--xl);
+  padding: var(--lg) 0 var(--xl);
+}
+.rodape-conteudo {
+  display: grid;
+  gap: var(--md);
+}
+.rodape p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--cinza);
+}
+
+/* Telas */
+.tela {
+  display: grid;
+  gap: var(--md);
+}
+.tela-cabecalho h1,
+.inicio h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.subtitulo {
+  margin: var(--xs) 0 0;
+  font-size: 15px;
+  color: var(--cinza);
+}
+
+.cartao {
+  display: grid;
+  gap: var(--md);
+  margin: 0;
+  padding: var(--md);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+}
+
+.resultado {
+  display: grid;
+  gap: var(--md);
+  scroll-margin-top: var(--md);
+}
+
+/* Campos */
+.campo {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.rotulo {
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.entrada {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 18px;
+  color: var(--tinta);
+  background: var(--creme);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-sm);
+}
+.entrada::placeholder {
+  color: var(--cinza);
+}
+.entrada:focus {
+  border-color: var(--verde);
+}
+.ajuda {
+  font-size: 12px;
+  color: var(--cinza);
+}
+
+.opcoes-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sm);
+}
+.opcao {
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 500;
+  color: var(--tinta);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.opcao[aria-pressed="true"] {
+  font-weight: 700;
+  color: var(--verde-escuro);
+  background: var(--verde-claro);
+  border-color: var(--verde);
+}
+
+.botao {
+  padding: 16px;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--branco);
+  background: var(--verde);
+  border: 0;
+  border-radius: var(--raio-md);
+  cursor: pointer;
+}
+.botao:hover,
+.botao:active {
+  background: var(--verde-escuro);
+}
+
+/* Resultado */
+.destaque {
+  display: grid;
+  gap: var(--xs);
+  padding: var(--md);
+  background: var(--verde-claro);
+  border-radius: var(--raio-md);
+}
+.destaque .rotulo {
+  color: var(--verde-escuro);
+}
+.valor-grande {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--verde-escuro);
+  overflow-wrap: anywhere;
+}
+.linha {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 15px;
+  border-bottom: 1px solid var(--borda);
+}
+.linha strong {
+  white-space: nowrap;
+}
+.linha .provento {
+  color: var(--provento);
+}
+.linha .desconto {
+  color: var(--desconto);
+}
+
+.aviso {
+  margin: 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--cinza);
+}
+.erro {
+  margin: 0;
+  font-weight: 600;
+  color: var(--erro);
+}
+
+/* Início */
+.inicio {
+  display: grid;
+  gap: var(--lg);
+}
+.inicio-cabecalho {
+  display: grid;
+  gap: 6px;
+  padding: var(--sm) 0;
+}
+.inicio-cabecalho .rotulo {
+  color: var(--verde);
+}
+.inicio h1 {
+  font-size: clamp(28px, 6vw, 36px);
+}
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.calc {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  height: 100%;
+  min-height: 150px;
+  padding: var(--md);
+  color: var(--tinta);
+  text-decoration: none;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-lg);
+}
+.calc:hover {
+  background: var(--verde-claro);
+  border-color: var(--verde);
+}
+.calc-simbolo {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  font-weight: 800;
+  background: var(--moeda);
+  border-radius: 50%;
+}
+.calc strong {
+  font-size: 17px;
+  font-weight: 800;
+}
+.calc span:last-child {
+  font-size: 13px;
+  color: var(--cinza);
+}
+
+.texto-corrido p,
+.texto-corrido li {
+  margin: 0;
+  line-height: 22px;
+}
+.texto-corrido ul {
+  display: grid;
+  gap: var(--xs);
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--cinza);
+}
+.texto-corrido h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+/* Anúncios: sempre identificados e afastados dos controles (skill admob-anuncios). */
+.anuncio {
+  display: grid;
+  gap: var(--xs);
+  margin: var(--lg) 0;
+  padding-top: var(--sm);
+  border-top: 1px dashed var(--borda);
+  min-height: 120px;
+}
+.anuncio-rotulo {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--cinza);
+}
+.anuncio-teste {
+  display: grid;
+  place-items: center;
+  min-height: 100px;
+  font-size: 13px;
+  color: var(--cinza);
+  background: repeating-linear-gradient(45deg, var(--creme), var(--creme) 8px, var(--branco) 8px, var(--branco) 16px);
+  border: 1px dashed var(--borda);
+  border-radius: var(--raio-sm);
+}
+.rodape .anuncio {
+  margin-top: 0;
+}

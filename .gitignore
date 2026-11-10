@@ -22,3 +22,8 @@ google-services.json
 
 .DS_Store
 .neon
+
+# Next.js
+.next/
+next-env.d.ts
+*.tsbuildinfo
