@@ -7,7 +7,8 @@ App Android/iOS gratuito, monetizado com AdMob, que simula rescisão, salário l
 ```
 packages/core   Motor de cálculo CLT. TypeScript puro, sem dependências. Fonte da verdade.
 apps/mobile     Expo (expo-router) + react-native-google-mobile-ads. Calcula offline usando o core.
-apps/api        Hono + Drizzle + Neon Postgres. Serve tabelas fiscais versionadas e config remota.
+apps/web        Next.js 16 + Google AdSense. Mesmas calculadoras do mobile, no navegador, usando o core.
+apps/api        Hono + Drizzle + Neon Postgres (deploy no Render). Serve tabelas fiscais versionadas e config remota.
 .claude/        Skills e agentes deste projeto.
 ```
 
@@ -18,6 +19,8 @@ apps/api        Hono + Drizzle + Neon Postgres. Serve tabelas fiscais versionada
 - `pnpm --filter @acerto/core test` — testes do motor de cálculo (node:test via tsx)
 - `pnpm dev:api` — API em http://localhost:8787 (funciona sem banco)
 - `pnpm dev:mobile` — Metro para o dev client (AdMob não roda no Expo Go)
+- `pnpm dev:web` / `pnpm build:web` — site Next.js em http://localhost:3000 (anúncio só de teste em dev)
+- Neon: `neon env pull` grava `DATABASE_URL` (pooled, app) e `DATABASE_URL_UNPOOLED` (migrations) no `.env.local` da raiz, que a API lê
 - `pnpm arte` — regenera ícone, splash e imagens da loja
 
 ## Regras do projeto
@@ -43,7 +46,7 @@ apps/api        Hono + Drizzle + Neon Postgres. Serve tabelas fiscais versionada
 | `tabelas-anuais` | Virada de ano: novo salário mínimo, INSS, IRRF |
 | `nova-calculadora` | Adicionar uma calculadora nova de ponta a ponta |
 | `expo-mobile` | Telas, navegação, build, EAS |
-| `admob-anuncios` | Qualquer coisa ligada a anúncios e consentimento |
+| `admob-anuncios` | Qualquer coisa ligada a anúncios e consentimento (app: AdMob; site: AdSense) |
 | `api-neon` | Endpoints, schema, migrations, Neon |
 | `arte-marca` | Ícone, splash, cores, imagens da loja |
 | `aso-play-store` | Ficha da Play Store, palavras-chave, screenshots |

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { AdResultado } from "@/ads/Anuncios";
 import { Aviso, Botao, CampoDinheiro, CampoNumero, Cartao, Destaque, Erro, Formulario, Linha, Resultado, Tela } from "@/components/ui";
 import { useApp } from "@/lib/contexto";
-import { parseValor } from "@/lib/format";
+import { brl, parseValor } from "@/lib/format";
 
 export function SalarioLiquido() {
   const { tabela } = useApp();
@@ -40,7 +40,7 @@ export function SalarioLiquido() {
             <Linha rotulo="Imposto de Renda" valor={r.irrf} tipo="desconto" />
             {r.outrosDescontos > 0 && <Linha rotulo="Outros descontos" valor={r.outrosDescontos} tipo="desconto" />}
             <Linha rotulo="FGTS depositado pela empresa" valor={r.fgtsMensal} />
-            {r.detalhes.irrf.redutor > 0 && <Aviso>Inclui a redução do IR de 2026 (Lei 15.270/2025): {r.detalhes.irrf.redutor.toFixed(2).replace(".", ",")}.</Aviso>}
+            {r.detalhes.irrf.redutor > 0 && <Aviso>Inclui a redução do IR de 2026 (Lei 15.270/2025): {brl(r.detalhes.irrf.redutor)}.</Aviso>}
           </Cartao>
           <AdResultado />
         </Resultado>
