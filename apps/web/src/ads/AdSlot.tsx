@@ -26,6 +26,9 @@ export function AdSlot({ slot, nome }: { slot: string; nome: string }) {
     }
   }, [real]);
 
+  // Produção sem slot (ex.: site em análise no AdSense): não mostra nada, nem o bloco de teste.
+  if (!real && process.env.NODE_ENV === "production" && ADSENSE_CLIENT !== "") return null;
+
   return (
     <aside className="anuncio" aria-label="Publicidade">
       <span className="anuncio-rotulo">Publicidade</span>

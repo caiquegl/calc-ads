@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { AdBanner, ScriptAdSense } from "@/ads/Anuncios";
+import { ADSENSE_CLIENT } from "@/ads/config";
 import { AppProvider } from "@/lib/contexto";
 import "./globals.css";
 
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
   description: "Calcule rescisão, salário líquido, férias, 13º, hora extra e FGTS pelas regras da CLT. Grátis e sem cadastro.",
   applicationName: "Acerto",
   openGraph: { type: "website", locale: "pt_BR", siteName: "Acerto: Calculadora CLT" },
+  // Verificação do site no AdSense (meta tag), só quando o publisher ID estiver definido.
+  ...(ADSENSE_CLIENT ? { other: { "google-adsense-account": ADSENSE_CLIENT } } : {}),
 };
 
 export const viewport: Viewport = { themeColor: "#1F6F5C" };
